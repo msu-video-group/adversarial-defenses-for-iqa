@@ -1,0 +1,3 @@
+[submodule "certified-iqa-defenses"]
+	path = certified-iqa-defenses
+	url = https://github.com/katiashh/certified-iqa-defenses
