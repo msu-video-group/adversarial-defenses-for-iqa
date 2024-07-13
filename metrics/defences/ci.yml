@@ -1,0 +1,240 @@
+methods-pipeline-generator:
+  tags:
+    - storage
+  extends: .common
+  stage: .pre
+  script:
+    - apk add --no-cache bash
+    - ./scripts/attack-generate-pipeline.sh generate
+  artifacts:
+    paths:
+      - "pipeline-*.yml"
+
+
+.method:trigger:
+  stage: test
+  trigger:
+    strategy: depend
+  allow_failure: false
+
+
+flip:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-flip.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $flip == "yes"
+      when: on_success
+    - when: manual
+
+mprnet:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-mprnet.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $mprnet == "yes"
+      when: on_success
+    - when: manual
+
+fcn:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-fcn.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $fcn == "yes"
+      when: on_success
+    - when: manual    
+
+realesrgan:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-realesrgan.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $realesrgan == "yes"
+      when: on_success
+    - when: manual       
+
+diffjpeg:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-diffjpeg.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $diffjpeg == "yes"
+      when: on_success
+    - when: manual      
+
+upscale:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-upscale.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $upscale == "yes"
+      when: on_success
+    - when: manual  
+
+unsharp:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-unsharp.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $unsharp == "yes"
+      when: on_success
+    - when: manual  
+
+resize:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-resize.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $resize == "yes"
+      when: on_success
+    - when: manual  
+
+random-rotate:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-random-rotate.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $random_rotate == "yes"
+      when: on_success
+    - when: manual  
+
+random-crop:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-random-crop.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $random_crop == "yes"
+      when: on_success
+    - when: manual  
+
+random-noise:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-random-noise.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $random_noise == "yes"
+      when: on_success
+    - when: manual  
+
+median-blur:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-median-blur.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $median_blur == "yes"
+      when: on_success
+    - when: manual  
+
+jpeg:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-jpeg.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $jpeg == "yes"
+      when: on_success
+    - when: manual  
+
+gaussian-blur:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-gaussian-blur.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $gaussian_blur == "yes"
+      when: on_success
+    - when: manual  
+
+color-quantization:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-color-quantization.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $color_quantization == "yes"
+      when: on_success
+    - when: manual  
+
+diffpure:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-diffpure.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $diffpure == "yes"
+      when: on_success
+    - when: manual
+
+disco:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-disco.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $disco == "yes"
+      when: on_success
+    - when: manual
+
+no-defence:
+  extends: .method:trigger
+  trigger:
+    include:
+      - artifact: pipeline-no-defence.yml
+        job: methods-pipeline-generator
+  rules:
+    - if: $no_defence == "yes"
+      when: on_success
+    - when: manual  
+
+# uap:
+#   extends: .method:trigger
+#   trigger:
+#     include:
+#       - artifact: pipeline-uap.yml
+#         job: methods-pipeline-generator
+#   rules:
+#     - if: $uap == "yes"
+#       when: on_success
+#     - when: manual
+        
+
+# cnn-attack:
+#   extends: .method:trigger
+#   trigger:
+#     include:
+#       - artifact: pipeline-cnn-attack.yml
+#         job: methods-pipeline-generator
+#   rules:
+#     - if: $cnn_attack == "yes"
+#       when: on_success
+#     - when: manual
