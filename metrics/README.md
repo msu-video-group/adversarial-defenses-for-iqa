@@ -15,5 +15,5 @@
         * `Dockerfile` - the main docker file that defines the image for the defense run
         * `read_dataset.py`, `evaluate.py`, `metrics.py` - other auxiliary files
 * `/scripts` - basic bash scripts and lists of defenses/metrics/attacks. From the important:
-    * `attack-test.sh` - скрипт, запускающий test джобы защит. В начале этого скрипта находятся все основные параметры, контролирующие прогон: пресет, батч сайз, пути до датасетов и тд.
-    * `defences.txt` - список защит. При добавлении новой защиты нужно добавить сюда название.
+    * `attack-test.sh` - the script that runs the defense jobs test. At the beginning of this script there are all the main parameters that control the run: preset, batch size, paths to datasets, etc.
+    * `defences.txt` - a list of defenses. When adding a new defense, you need to add a name here.
