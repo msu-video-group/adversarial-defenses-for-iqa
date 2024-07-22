@@ -1,19 +1,19 @@
-## Ветка для прогона защит
-### Структура
-* `/methods` - не используется при запусках
-* `/subjects` - папка с метриками, не отличается от остальных веток
-* `/defences` - папка с защитами. Содержит подпапки-защиты по аналогии с атаками. Также внутри есть CI файл, папка utils со скриптами, отвечающими за прогон.
-    * `/*название защиты*/` -- название защиты не должно содержать заглавных букв и нижних подчеркиваний, для разделения слов используйте -.
-        * `run.py` - в папке с защитой обязательно должен быть файл `run.py`, содержащий класс `Defence`  с реализованным методом `__call__`, а также код, вызывающий функцию `test_main` (см любую защиту).
-        * `dfsrc/` - если реализация защиты требует каких либо дополнительных скриптов или файлов, они должны находиться в этой папке. Она копируется в докер образ без изменений, при инициализации и использовании защиты она будет доступна. Если никаких дополнительных файлов для защиты не нужно, эту папку можно не создавать. Если для защиты требуется загрузить веса, добавьте в `dfsrc` скрипт `setup.sh`, качающий их wget'ом с титана или диона. Сам собой скрипт не запустится - добавьте его запуск при инициализации защиты или в начале файла `run.py` с помощью `subprocess.run()` (см защиты mprnet или fcn).
-    * `ci.yml` - файл CI, аналогичный атакам. Если добавляете новую защиту, внесите в него соответствующую запись. Заметьте, что если в названии защиты есть - , то в строке `- if: $*название защиты* == "yes"` в названии защиты - заменяются на _.
-    * `utils/` -- папка с основными скриптами для запуска защит
-        * `defence_presets.json` - пресеты защит
-        * `defence_evaluate.py` - основной скрипт, аналог `fgsm_evaluate.py` для атак.
-        * `defence_dataset.py` - класс датасета, используемого при прогоне защит по атакованному датасету.
-        * `defence_scoring_methods.py` - функции для вычисления различных скоров, по которым сравниваем защиты.
-        * `Dockerfile` - основной докерфайл, задающий образ для прогона защит.
-        * `read_dataset.py`, `evaluate.py`, `metrics.py` - прочие вспомогательные файлы.
-* `/scripts` - основные баш скрипты и списки защит/метрик/атак. Из важного:
+## A branch for running defenses
+### Structure
+* `/methods` - this folder is not used for launches
+* `/subjects` - the folder with target quality metrics
+* `/defences` - the folder with defenses. Contains defense subfolders similar to attacks. Also inside there is a CI file, a utils folder with scripts used for the run
+    * `/*название защиты*/` -- the name of a defense should not contain capital letters and underscores, use `-.` to separate the words 
+        * `run.py` - there must be an `run.py` file in the defense folder, containing the `Defense` class with the implemented `__call__` method, as well as the code calling the `test_main` function (see any protection)
+        * `dfsrc/` - if the defense implementation requires any additional scripts or files, they must be located in this folder. It is copied to the docker image without changes, and it will be available during initialization and use of defense. If you do not need any additional files for defense, you do not need to create this folder. If you need to load weights for defense, add the script `setup.sh` to the `dfsrc`, pumping their wget from server. The script will not run by itself - add its launch when initializing defense or at the beginning of the file `run.py `using `subprocess.run()` (see mprnet or fcn defense)
+    * `ci.yml` - a CI file similar to the attacks. If you are adding a new defense, make an appropriate entry in it. Note that if there is a `-` in the protection name, then in the line `-if: $*protection name* == "yes"` in the defense name `-` are replaced by `_` 
+    * `utils/` -- the folder with the main scripts for launching defenses
+        * `defence_presets.json` - defense presets
+        * `defence_evaluate.py` - the main script, an analog of `fgsm_evaluate.py` for attacks
+        * `defence_dataset.py` - the class of the dataset used when running defenses on the attacked dataset
+        * `defence_scoring_methods.py` - functions for calculating different scores, by which we compare defenses
+        * `Dockerfile` - the main docker file that defines the image for the defense run
+        * `read_dataset.py`, `evaluate.py`, `metrics.py` - other auxiliary files
+* `/scripts` - basic bash scripts and lists of defenses/metrics/attacks. From the important:
     * `attack-test.sh` - скрипт, запускающий test джобы защит. В начале этого скрипта находятся все основные параметры, контролирующие прогон: пресет, батч сайз, пути до датасетов и тд.
     * `defences.txt` - список защит. При добавлении новой защиты нужно добавить сюда название.
