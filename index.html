@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="In this work, we present a new benchmark of defense methods against adversarial attacks on image quality metrics">
+  <meta property="og:title" content="Guardians of Image Quality: Benchmarking Defenses Against Adversarial Attacks on Image Quality Metrics"/>
+  <meta property="og:description" content="In this work, we present a new benchmark of defense methods against adversarial attacks on image quality metrics"/>
+  <meta property="og:url" content="TODO"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/favicon.ico" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Guardians of Image Quality: Benchmarking Defenses Against Adversarial Attacks on Image Quality Metrics">
+  <meta name="twitter:description" content="In this work, we present a new benchmark of defense methods against adversarial attacks on image quality metrics">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/favicon.ico">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="image quality assessment, iqa, adversarial attacks, adversarial defenses, benchmark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Guardians of Image Quality: Benchmarking Defenses Against Adversarial Attacks on Image Quality Metrics</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Guardians of Image Quality: Benchmarking Defenses Against Adversarial Attacks on Image Quality Metrics</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://www.researchgate.net/profile/Alexander-Gushchin-3?ev=hdr_xprf" 
+                  target="_blank">Aleksandr Gushchin</a><sup>1,2,3</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="" 
+                    target="_blank">Khaled Abud</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="" 
+                    target="_blank">Georgii Bychkov</a><sup>1,2,3</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="" 
+                    target="_blank">Ekaterina Shumitskaya</a><sup>1,2,3</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="" 
+                    target="_blank">Anna Chistyakova</a><sup>1,3</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="" 
+                    target="_blank">Sergey Lavrushkin</a><sup>2,3</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="" 
+                    target="_blank">Bader Rasheed</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="" 
+                    target="_blank">Kirill Malyshev</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="" 
+                    target="_blank">Dmitriy Vatolin</a><sup>1,2,3,4</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="" 
+                    target="_blank">Anastasia Antsiferova</a><sup>2,3,4</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                    <sup>1</sup>
+                    Lomonosov Moscow State University
+                    <br>
+                    <sup>2</sup>
+                    MSU Institute for Artificial Intelligence
+                    <br>
+                    <sup>3</sup>
+                    ISP RAS Research Center for Trusted
+                    Artificial Intelligence
+                    <br>
+                    <sup>4</sup>
+                    Innopolis University
+                    <br>
+                </span>
+                <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+            </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2408.01541" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/msu-video-group/adversarial-defenses-for-iqa" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2408.01541" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser image-->
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img src="static/images/scheme2.png"
+                alt="MY ALT TEXT">
+            <!-- <h2 class="subtitle has-text-centered">
+  Overview of the proposed layer-wise calibration procedure before fine-tuning.
+</h2> -->
+        </div>
+    </div>
+</section>
+<!-- End teaser image -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Modern neural-network-based Image Quality Assessment (IQA) metrics are vulnerable to adversarial attacks, which can be exploited to manipulate search engine rankings, benchmark results, and content quality assessments, raising concerns about the reliability of IQA metrics in critical applications. This paper presents the first comprehensive study of IQA defense mechanisms in response to adversarial attacks on these metrics to pave the way for safer use of IQA metrics. We systematically evaluated 30 defense strategies, including purification, training-based, and certified methods --- and applied 14 adversarial attacks in adaptive and non-adaptive settings to compare these defenses on 9 no-reference IQA metrics. Our proposed benchmark aims to guide the development of IQA defense methods and is open to submissions; the latest results and code are at https://videoprocessing.ai/benchmarks/iqa-defenses.html 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Key features -->
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <div class="content has-text-justified">
+                    <h2 class="title is-3">Key features</h2>
+                    <p>
+                        Our benchmark is the first to evaluate and compare different techniques for defending IQA metrics. Key features are:
+                        <ul>
+                          <li>Datasets: KonIQ‑10k, KADID‑10k, NIPS‑2017, AGIQA‑3K </li>
+                          <li>Metrics: Meta‑IQA, MANIQA, CLIP‑IQA+, TOPIQ, Koncept, SPAQ, PAQ2PIQ, Linearity, FPR</li>
+                          <li>Attacks: 14 white/black‑box, 3 budgets, adaptive vs. non‑adaptive</li>
+                          <li>Defenses: 17 purification, 7 adversarial‑training, 6 certified</li>
+                          <li>Subjective study (60k+ votes)</li>
+                          <li>Open online leaderboard for continuous submissions</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/scheme2.png" alt="Benchmark parts"/>
+        <h2 class="subtitle has-text-centered">
+          Evaluation scheme: The benchmark consists of four parts: datasets, IQA models, adversarial attacks, and adversarial defenses.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/main_plot.png" alt="Main plot with results"/>
+        <h2 class="subtitle has-text-centered">
+          Adversarial defenses efficiency for IQA metrics in terms of SROCC (left) and D_score (right). Bars and dots are for adaptive and non-adaptive attacks, respectively. Each dot represents the result for each preset of defense. Red dots represent a selected preset for the adaptive case. Results are averaged across 9 IQA metrics and 14 attacks.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/subj_2.png" alt="Subjective study"/>
+        <h2 class="subtitle has-text-centered">
+         Results of subjective evaluation for purification methods.
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/artifacts.png" alt="Examples of image artifacts"/>
+      <h2 class="subtitle has-text-centered">
+        Examples of artifacts caused by various defenses when MANIQA metric is attacked. We selectively zoom in on key parts of the images to highlight the details.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<!-- Subjective scores -->
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <div class="content has-text-justified">
+                    <h2 class="title is-3">Results and submission</h2>
+                    <p>
+                      Latest results and steps to submit your method can be found here: <a href="https://videoprocessing.ai/benchmarks/iqa-defenses.html">https://videoprocessing.ai/benchmarks/iqa-defenses.html</a>. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre>
+        <code>@misc{gushchin2024guardiansimagequalitybenchmarking,
+        title={Guardians of Image Quality: Benchmarking Defenses Against Adversarial Attacks on Image Quality Metrics}, 
+        author={Alexander Gushchin and Khaled Abud and Georgii Bychkov and Ekaterina Shumitskaya and Anna Chistyakova and Sergey Lavrushkin and Bader Rasheed and Kirill Malyshev and Dmitriy Vatolin and Anastasia Antsiferova},
+        year={2024},
+        eprint={2408.01541},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2408.01541}, 
+        }</code>
+      </pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
